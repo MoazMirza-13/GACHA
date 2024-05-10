@@ -1,5 +1,5 @@
 import React from "react";
-import { View, StyleSheet, Text } from "react-native";
+import { View, StyleSheet, Text, TouchableOpacity } from "react-native";
 import { StatusBar } from "expo-status-bar";
 import { useCallState } from "./services/callState";
 
@@ -9,7 +9,9 @@ export default function App() {
 
   return (
     <View style={styles.container}>
-      <Text onPress={playSound}>Click here to play sound</Text>
+      <TouchableOpacity onPress={playSound} style={styles.button}>
+        <Text>Touch here to play the GACHA sound</Text>
+      </TouchableOpacity>
       <StatusBar style="auto" />
     </View>
   );
@@ -21,5 +23,10 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
     backgroundColor: "#fff",
+  },
+  button: {
+    padding: 10,
+    backgroundColor: "#DDDDDD",
+    borderRadius: 5,
   },
 });
